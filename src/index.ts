@@ -16,7 +16,6 @@ import { TaskResolver } from './resolvers/TaskResolver'
   const apollo = new ApolloServer({
     schema: await buildSchema({
       resolvers: [HeartBeatResolver, UserResolver, ListResolver, TaskResolver],
-      plugins: [process.env.NODE_ENV === 'production' && ApolloServerPluginLandingPageDisabled()],
       validate: true,
       authChecker: async ({ context: { user } }: any) => {
         const client = await pool.connect()
@@ -33,6 +32,7 @@ import { TaskResolver } from './resolvers/TaskResolver'
         }
       }
     }),
+    plugins: [ApolloServerPluginLandingPageDisabled()],
     context: ({ req, res }) => {
       const context = { req, res, user: null }
       if (!req.headers.authorization) return context
