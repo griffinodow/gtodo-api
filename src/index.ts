@@ -2,6 +2,7 @@ import 'reflect-metadata'
 import express from 'express'
 import cors from 'cors'
 import { ApolloServer } from 'apollo-server-express'
+import { ApolloServerPluginLandingPageDisabled } from 'apollo-server-core'
 import { buildSchema } from 'type-graphql'
 import { pool } from './lib/postgres'
 import { HeartBeatResolver } from './resolvers/HeartBeatResolver'
@@ -15,6 +16,7 @@ import { TaskResolver } from './resolvers/TaskResolver'
   const apollo = new ApolloServer({
     schema: await buildSchema({
       resolvers: [HeartBeatResolver, UserResolver, ListResolver, TaskResolver],
+      plugins: [process.env.NODE_ENV === 'production' && ApolloServerPluginLandingPageDisabled()],
       validate: true,
       authChecker: async ({ context: { user } }: any) => {
         const client = await pool.connect()
