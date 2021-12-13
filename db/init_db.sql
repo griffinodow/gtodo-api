@@ -29,5 +29,3 @@ CREATE TABLE task (
 	FOREIGN KEY (list)
 		REFERENCES list("uuid") ON DELETE CASCADE
 );
-
-zvjfZsmA56hn7Ty
