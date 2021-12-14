@@ -20,8 +20,7 @@ export class UserResolver {
       return {
         id
       }
-    } catch (error) {
-      console.log(error)
+    } catch {
       await client.query('ROLLBACK')
       throw new ApolloError('User could not be created', 'USER_CREATE_FAIL')
     } finally {
