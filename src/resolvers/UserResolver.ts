@@ -3,6 +3,9 @@ import { ApolloError } from 'apollo-server-errors'
 import { User } from '../entities/User'
 import { pool } from '../lib/postgres'
 
+/**
+ * API endpoint for users.
+ */
 @Resolver()
 export class UserResolver {
   @Mutation(() => User)
