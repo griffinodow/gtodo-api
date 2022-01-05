@@ -10,6 +10,9 @@ import { UserResolver } from './resolvers/UserResolver'
 import { ListResolver } from './resolvers/ListResolver'
 import { TaskResolver } from './resolvers/TaskResolver'
 
+/**
+ * Initializes the server.
+ */
 (async () => {
   const app = express()
   app.use(cors())
