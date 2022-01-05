@@ -3,6 +3,9 @@ import { Mutation, Resolver, Arg, Ctx, Authorized, Query } from 'type-graphql'
 import { Task } from '../entities/Task'
 import { pool } from '../lib/postgres'
 
+/**
+ * API endpoint for tasks.
+ */
 @Resolver()
 export class TaskResolver {
   @Authorized()
