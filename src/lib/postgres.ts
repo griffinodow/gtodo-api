@@ -1,5 +1,8 @@
 import { Pool } from 'pg'
 
+/**
+ * PostgreSQL client pool to submit queries.
+ */
 export const pool = new Pool({
   user: process.env.GT_PG_USER,
   host: process.env.GT_PG_HOST,
