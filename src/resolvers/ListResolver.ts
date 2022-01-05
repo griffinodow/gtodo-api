@@ -3,6 +3,9 @@ import { Mutation, Resolver, Arg, Ctx, Authorized, Query } from 'type-graphql'
 import { List } from '../entities/List'
 import { pool } from '../lib/postgres'
 
+/**
+ * API endpoint for lists.
+ */
 @Resolver()
 export class ListResolver {
   @Authorized()
