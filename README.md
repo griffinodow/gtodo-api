@@ -64,7 +64,7 @@ For easy configuration the Docker container expects the follow environment varia
 ### Develop Locally
 
 ```bash
-# Serve with hot reload at localhost:3000
+# Serve with hot reload at localhost:4000
 npm run dev
 
 # Build for production
