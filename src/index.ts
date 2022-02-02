@@ -47,6 +47,6 @@ import { TaskResolver } from './resolvers/TaskResolver'
   await apollo.start()
   apollo.applyMiddleware({ app, cors: false, path: '/' })
   app.listen({
-    port: 4000
+    port: 80
   }, () => console.log('Express server initialized'))
 })()

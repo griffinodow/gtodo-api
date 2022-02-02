@@ -15,4 +15,4 @@ RUN npm uninstall -g typescript
 RUN apk del npm
 ARG NODE_ENV=production
 CMD ["node", "./dist/index.js"]
-EXPOSE 4000
+EXPOSE 80
